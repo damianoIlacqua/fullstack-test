@@ -78,9 +78,11 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Edukey
+              <div class="title m-b-md">
+                <div id="app">
+                  <root></root>
                 </div>
+              </div>
 
                 <div class="links">
                     <a href="">Educación "a medida"</a>
@@ -91,5 +93,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
