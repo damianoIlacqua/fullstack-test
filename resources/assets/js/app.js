@@ -17,6 +17,6 @@ window.Vue = require('vue');
 
 Vue.component('root', require('./components/Root.vue'));
 
-const app = new Vue({
-    el: '#app'
+const conv = new Vue({
+    el: 'root'
 });
