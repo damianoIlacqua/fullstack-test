@@ -1,5 +1,8 @@
 <?php
 
+use App\Mission;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +15,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [$users = User::withHas("mission")->all()]);
 });
