@@ -33,3 +33,5 @@ En web.php, le pasamos a la vista welcome los datos de todos los usuarios con mi
 
 
 Para terminar, sube tu código a una rama de github "test/nombre decandidato" y realiza un pull request a master.
+
+Avisa una vez hayas completado el test.
