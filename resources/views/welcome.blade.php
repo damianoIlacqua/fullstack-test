@@ -14,7 +14,7 @@
         </style>
     </head>
     <body>
-      <root users="{{JSON::encode($users)}}"></root>
+      <root users="{{json_encode($users)}}"></root>
 
       <script src="{{ asset('js/app.js') }}"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">

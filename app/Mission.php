@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Mission extends Model
 {
   use SoftDeletes;
+
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+      'title', 'description',
+  ];
 
   /*
   --------------------------------------------------------------------------
@@ -19,7 +28,7 @@ class Mission extends Model
    * Scope not default titles
    */
   public function scopeNotDefaultTitles($query){
-    //TODO
+    return $query->where('title', '<>', 'Mission title'); //--
   }
 
   /*
@@ -31,9 +40,9 @@ class Mission extends Model
   /**
    * Get user of this conversation
    */
-  public function users() {
-    //TODO
-  }
+   public function user() {
+     return $this->belongsTo('App/User');
+   }
 
   /*
   --------------------------------------------------------------------------
@@ -41,5 +50,17 @@ class Mission extends Model
   --------------------------------------------------------------------------
   */
 
-  //TODO
+  /**
+   * Overriding the getAttribute method in order to return "---"
+   * when a description is blank or has not been set up.
+   */
+
+  public function getAttribute($keyval) {
+    $value = parent::getAttribute($keyval);
+    if(($value == '' || $value == null) && $keyval == 'description') {
+      return '---';
+    }
+    return $value;
+  }
+
 }
