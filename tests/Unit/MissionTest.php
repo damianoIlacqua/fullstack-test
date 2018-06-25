@@ -30,8 +30,6 @@ class InterlocutorTest extends TestCase
 
   public function a_mission_has_a_user($mission)
   {
-    // Create a Mission
-
     $user = User::create([
             'name'     => 'User 1',
             'email'    => 'user1@missions.tst',
